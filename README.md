@@ -8,4 +8,4 @@
 - 项目依赖管理工具：Maven 3.6.3
 
 ## 项目架构
-![crab4j](docs/img/crab4j.png)
+![crab4j](docs/imgs/crab4j.png)
