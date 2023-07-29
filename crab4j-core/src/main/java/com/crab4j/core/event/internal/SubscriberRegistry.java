@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * SubscriberRegistry
+ * SubscriberRegistry.
  *
  * @author dlmyL
  * @date 2023-07-29

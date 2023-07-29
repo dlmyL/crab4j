@@ -3,7 +3,7 @@ package com.crab4j.core.event.executor;
 import java.util.concurrent.Executor;
 
 /**
- * PerThreadExecutor
+ * Executor.
  *
  * @author dlmyL
  * @date 2023-07-29

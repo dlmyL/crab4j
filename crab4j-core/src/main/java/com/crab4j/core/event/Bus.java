@@ -1,7 +1,7 @@
 package com.crab4j.core.event;
 
 /**
- * Bus
+ * Bus.
  *
  * @author dlmyL
  * @date 2023-07-29

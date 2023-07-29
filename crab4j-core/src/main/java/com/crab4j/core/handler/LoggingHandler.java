@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * LoggingHandler
+ * 日志处理器
  *
  * @author dlmyL
  * @date 2023-07-29

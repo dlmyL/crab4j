@@ -9,7 +9,7 @@ import com.crab4j.core.handler.ExceptionHandler;
 import java.util.concurrent.Executor;
 
 /**
- * EventBus
+ * 事件总线
  *
  * @author dlmyL
  * @date 2023-07-29

@@ -1,5 +1,7 @@
 package com.crab4j.core.annotation;
 
+import com.crab4j.core.common.constant.Constants;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -19,6 +21,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Subscribe {
 
-    String topic() default "default-topic";
+    String topic() default Constants.DEFAULT_TOPIC;
 
 }

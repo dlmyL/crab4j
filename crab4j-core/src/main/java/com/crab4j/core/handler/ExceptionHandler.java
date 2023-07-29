@@ -3,7 +3,7 @@ package com.crab4j.core.handler;
 import com.crab4j.core.context.EventContext;
 
 /**
- * 事件异常处理器
+ * 异常处理器
  *
  * @author dlmyL
  * @date 2023-07-29

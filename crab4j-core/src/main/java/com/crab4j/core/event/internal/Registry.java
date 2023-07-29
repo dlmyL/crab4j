@@ -3,7 +3,7 @@ package com.crab4j.core.event.internal;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * Registry
+ * Registry.
  *
  * @author dlmyL
  * @date 2023-07-29

@@ -3,7 +3,7 @@ package com.crab4j.core.event.internal;
 import java.lang.reflect.Method;
 
 /**
- * Subscriber
+ * Subscriber.
  *
  * @author dlmyL
  * @date 2023-07-29

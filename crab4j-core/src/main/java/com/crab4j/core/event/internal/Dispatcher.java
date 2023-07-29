@@ -12,7 +12,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
 /**
- * Dispatcher
+ * 事件分发器
  *
  * @author dlmyL
  * @date 2023-07-29

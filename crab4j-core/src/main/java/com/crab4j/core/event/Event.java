@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * 事件标记抽像
+ * Event.
  *
  * @author dlmyL
  * @date 2023-07-29
