@@ -34,7 +34,8 @@ public class Dispatcher {
         ConcurrentLinkedQueue<Subscriber> subscribers = registry.scan(topic);
         if (null == subscribers) {
             if (exceptionHandler != null) {
-                exceptionHandler.handle(new IllegalArgumentException("The topic " + topic + " not bind yet"),
+                exceptionHandler.handle(
+                        new IllegalArgumentException("The topic " + topic + " not bind yet"),
                         new SubscriberEventContext(bus.getBusName(), null, event)
                 );
             }

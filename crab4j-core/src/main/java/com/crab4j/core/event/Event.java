@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Event.
+ * 事件抽象，提供事件执行序列
  *
  * @author dlmyL
  * @date 2023-07-29

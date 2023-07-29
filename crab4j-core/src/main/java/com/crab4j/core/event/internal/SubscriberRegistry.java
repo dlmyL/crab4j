@@ -11,33 +11,42 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * SubscriberRegistry.
+ * 订阅者事件注册中心
  *
  * @author dlmyL
  * @date 2023-07-29
  */
 public class SubscriberRegistry implements Registry {
 
+    /**
+     * 注册表
+     */
     private final ConcurrentHashMap<String, ConcurrentLinkedQueue<Subscriber>>
             subscriberContainer = new ConcurrentHashMap<>();
 
     @Override
     public void bind(Object subscriber) {
+        // 获取订阅方法列表
         List<Method> subscribeMethods = getSubscribeMethods(subscriber);
+        // 获取含有@Subscribe注释的方法进行缓存
         subscribeMethods.forEach(m -> tierSubscriber(subscriber, m));
     }
 
     @Override
     public void unbind(Object subscriber) {
-        subscriberContainer.forEach((key, queue) -> queue.forEach(s -> {
-            if (s.getSubscribeObject() == subscriber) {
-                s.setDisable(true);
+        // 遍历注册表，修改订阅者的状态
+        subscriberContainer.forEach((key, queue) ->
+                queue.forEach(s -> {
+                    if (s.getSubscribeObject() == subscriber) {
+                    s.setDisable(true);
+                }
             }
-        }));
+        ));
     }
 
     @Override
     public ConcurrentLinkedQueue<Subscriber> scan(String topic) {
+        // 从注册表中获取topic所对应的订阅者集合
         return subscriberContainer.get(topic);
     }
 

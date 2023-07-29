@@ -6,7 +6,7 @@ import com.crab4j.core.handler.ExceptionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 异步事件总线
+ * 事件总线同步调度器
  *
  * @author dlmyL
  * @date 2023-07-29
