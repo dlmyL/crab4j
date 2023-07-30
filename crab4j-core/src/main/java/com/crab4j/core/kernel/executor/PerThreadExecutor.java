@@ -6,12 +6,15 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
 /**
- * PerThreadExecutor.
+ * 来一个事件就有一个线程来执行
  *
  * @author dlmyL
  * @date 2023-07-29
  */
 public final class PerThreadExecutor implements Executor {
+
+    private PerThreadExecutor() {
+    }
 
     private final static PerThreadExecutor INSTANCE = new PerThreadExecutor();
 
@@ -24,8 +27,7 @@ public final class PerThreadExecutor implements Executor {
 
     @Override
     public void execute(Runnable command) {
-        new Thread(command).start();
-        //executor.execute(command);
+        executor.execute(command);
     }
 
 }
