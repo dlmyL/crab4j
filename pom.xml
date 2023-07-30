@@ -11,7 +11,6 @@
 
     <modules>
         <module>crab4j-core</module>
-        <module>crab4j-spring-boot-starter</module>
         <module>crab4j-example</module>
     </modules>
 

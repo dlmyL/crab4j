@@ -41,7 +41,7 @@ public class AsyncEventBusTest {
 
     @Test
     public void test_EventBusUseTopic() throws InterruptedException {
-        Bus bus = new AsyncEventBus(executor);
+        Bus bus = new AsyncEventBus();
         bus.register(new SimpleListener());
         for (int i = 0; i < 10; i++) {
             bus.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
