@@ -1,4 +1,4 @@
-package com.crab4j.core.toolkit;
+package com.crab4j.core.common.utils;
 
 import java.util.Collection;
 import java.util.Map;

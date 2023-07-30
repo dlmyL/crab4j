@@ -1,4 +1,4 @@
-package com.crab4j.core.event.internal;
+package com.crab4j.core.kernel;
 
 import com.crab4j.core.annotation.Subscribe;
 
@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * @author dlmyL
  * @date 2023-07-29
  */
-public class SubscriberRegistry implements Registry {
+public class Registry {
 
     /**
      * 注册表
@@ -24,7 +24,6 @@ public class SubscriberRegistry implements Registry {
     private final ConcurrentHashMap<String, ConcurrentLinkedQueue<Subscriber>>
             subscriberContainer = new ConcurrentHashMap<>();
 
-    @Override
     public void bind(Object subscriber) {
         // 获取订阅方法列表
         List<Method> subscribeMethods = getSubscribeMethods(subscriber);
@@ -32,7 +31,6 @@ public class SubscriberRegistry implements Registry {
         subscribeMethods.forEach(m -> tierSubscriber(subscriber, m));
     }
 
-    @Override
     public void unbind(Object subscriber) {
         // 遍历注册表，修改订阅者的状态
         subscriberContainer.forEach((key, queue) ->
@@ -44,7 +42,6 @@ public class SubscriberRegistry implements Registry {
         ));
     }
 
-    @Override
     public ConcurrentLinkedQueue<Subscriber> scan(String topic) {
         // 从注册表中获取topic所对应的订阅者集合
         return subscriberContainer.get(topic);

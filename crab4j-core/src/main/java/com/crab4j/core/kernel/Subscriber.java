@@ -1,4 +1,4 @@
-package com.crab4j.core.event.internal;
+package com.crab4j.core.kernel;
 
 import java.lang.reflect.Method;
 

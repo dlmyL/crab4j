@@ -1,5 +1,7 @@
 package com.crab4j.core.event;
 
+import com.crab4j.core.kernel.event.Event;
+
 /**
  * 简单的事件
  *

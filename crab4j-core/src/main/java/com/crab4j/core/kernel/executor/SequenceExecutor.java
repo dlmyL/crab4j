@@ -1,4 +1,4 @@
-package com.crab4j.core.event.executor;
+package com.crab4j.core.kernel.executor;
 
 import java.util.concurrent.Executor;
 

@@ -1,7 +1,7 @@
 package com.crab4j.core.handler;
 
 import com.crab4j.core.context.EventContext;
-import com.crab4j.core.event.EventBus;
+import com.crab4j.core.kernel.EventBus;
 
 import java.lang.reflect.Method;
 import java.util.logging.Level;

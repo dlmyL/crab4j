@@ -1,5 +1,7 @@
 package com.crab4j.core.event;
 
+import com.crab4j.core.kernel.Bus;
+import com.crab4j.core.kernel.EventBus;
 import org.junit.Test;
 
 /**
@@ -19,6 +21,8 @@ public class EventBusTest {
             bus.post(new SimpleEvent("杀疯了"));
         }
         bus.post(8848);
+
+        bus.close();
     }
 
     @Test
@@ -29,6 +33,8 @@ public class EventBusTest {
             bus.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
         }
         bus.post("天神下凡", "my-topic");
+
+        bus.close();
     }
 
     @Test
@@ -38,6 +44,8 @@ public class EventBusTest {
         //bus.post("坤你太美");
         bus.post("教练，我想打篮球", "ex-topic");
         //bus.post(1024);
+
+        bus.close();
     }
 
 }

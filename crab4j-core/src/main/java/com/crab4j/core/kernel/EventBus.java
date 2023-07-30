@@ -1,9 +1,6 @@
-package com.crab4j.core.event;
+package com.crab4j.core.kernel;
 
 import com.crab4j.core.common.constant.Constants;
-import com.crab4j.core.event.internal.Dispatcher;
-import com.crab4j.core.event.internal.Registry;
-import com.crab4j.core.event.internal.SubscriberRegistry;
 import com.crab4j.core.handler.ExceptionHandler;
 
 import java.util.concurrent.Executor;
@@ -18,7 +15,7 @@ public class EventBus implements Bus {
 
     private final String busName;
     private final Dispatcher dispatcher;
-    private final Registry registry = new SubscriberRegistry();
+    private final Registry registry = new Registry();
 
     public EventBus() {
         this(Constants.DEFAULT_BUS_NAME, Dispatcher.SEQUENCE_EXECUTOR, null);

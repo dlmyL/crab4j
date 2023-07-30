@@ -1,7 +1,7 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.event.Bus;
-import com.crab4j.core.event.EventBus;
+import com.crab4j.core.kernel.Bus;
+import com.crab4j.core.kernel.EventBus;
 import org.junit.Test;
 
 /**

@@ -1,6 +1,6 @@
 package com.crab4j.core.context;
 
-import com.crab4j.core.event.internal.Subscriber;
+import com.crab4j.core.kernel.Subscriber;
 
 import java.lang.reflect.Method;
 

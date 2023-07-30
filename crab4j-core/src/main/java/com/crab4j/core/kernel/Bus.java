@@ -1,4 +1,4 @@
-package com.crab4j.core.event;
+package com.crab4j.core.kernel;
 
 /**
  * Bus.

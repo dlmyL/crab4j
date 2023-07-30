@@ -1,12 +1,12 @@
-package com.crab4j.core.common.extension.design;
+package com.crab4j.core.common.builder;
 
 import java.io.Serializable;
 
 /**
- * Builder.
+ * Builder
  *
  * @author dlmyL
- * @date 2023-07-29
+ * @date 2023-07-30
  */
 public interface Builder<T> extends Serializable {
 

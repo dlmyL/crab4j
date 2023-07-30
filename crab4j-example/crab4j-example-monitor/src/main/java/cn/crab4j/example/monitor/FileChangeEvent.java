@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.event.Event;
+import com.crab4j.core.kernel.event.Event;
 
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;

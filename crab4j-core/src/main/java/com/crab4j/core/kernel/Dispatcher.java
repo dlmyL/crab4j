@@ -1,10 +1,9 @@
-package com.crab4j.core.event.internal;
+package com.crab4j.core.kernel;
 
 import com.crab4j.core.context.SubscriberEventContext;
-import com.crab4j.core.event.Bus;
-import com.crab4j.core.event.executor.PerThreadExecutor;
-import com.crab4j.core.event.executor.SequenceExecutor;
 import com.crab4j.core.handler.ExceptionHandler;
+import com.crab4j.core.kernel.executor.PerThreadExecutor;
+import com.crab4j.core.kernel.executor.SequenceExecutor;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentLinkedQueue;
