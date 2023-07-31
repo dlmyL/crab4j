@@ -9,3 +9,6 @@
 
 ## 项目架构
 ![crab4j](docs/imgs/crab4j.png)
+
+## Listener 注册过程
+![listener-register](docs/imgs/listener-register.png)

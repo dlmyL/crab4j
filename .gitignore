@@ -6,9 +6,7 @@ target/
 !**/node_modules/
 !**/dist/
 
-### Agent ###
-hippo4j-agent/
-**/dependency-reduced-pom.xml
+.fastRequest
 
 ### STS ###
 .apt_generated
@@ -46,7 +44,6 @@ build/
 docs/node_modules
 docs/build
 docs/.docusaurus
-
 
 ### Docker ###
 docker/conf
