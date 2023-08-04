@@ -2,7 +2,7 @@ package cn.crab4j.core.event;
 
 import cn.crab4j.core.common.thread.ThreadHelper;
 import cn.crab4j.core.eventbus.AsyncEventBus;
-import cn.crab4j.core.eventbus.DefaultTopic;
+import cn.crab4j.core.eventbus.TopicProvider;
 import cn.crab4j.core.eventbus.convention.Bus;
 import cn.crab4j.core.handler.LoggingHandler;
 import org.junit.Before;
@@ -42,7 +42,7 @@ public class AsyncEventBusTest {
         Bus bus = new AsyncEventBus();
         bus.register(new SimpleListener());
         bus.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
-        bus.post(new SimpleEvent("天神下凡"), DefaultTopic.of("my-topic"));
+        bus.post(new SimpleEvent("天神下凡"), TopicProvider.of("my-topic"));
 
         TimeUnit.SECONDS.sleep(8);
         bus.close();
@@ -53,7 +53,7 @@ public class AsyncEventBusTest {
         Bus bus = new AsyncEventBus(executor, new SimpleExceptionHandler());
         bus.register(new SimpleListener());
         bus.post(new SimpleEvent("坤你太美"));
-        bus.post(new SimpleEvent("教练，我想打篮球"), DefaultTopic.of("ex-topic"));
+        bus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));
 
         TimeUnit.SECONDS.sleep(8);
         bus.close();
@@ -64,7 +64,7 @@ public class AsyncEventBusTest {
         Bus bus = new AsyncEventBus(executor, new LoggingHandler());
         bus.register(new SimpleListener());
         bus.post(new SimpleEvent("坤你太美"));
-        bus.post(new SimpleEvent("教练，我想打篮球"), DefaultTopic.of("ex-topic"));
+        bus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));
 
         TimeUnit.SECONDS.sleep(8);
         bus.close();

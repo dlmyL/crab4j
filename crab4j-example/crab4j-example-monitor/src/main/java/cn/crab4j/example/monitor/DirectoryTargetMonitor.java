@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import cn.crab4j.core.eventbus.EventBusCenter;
+import cn.crab4j.core.eventbus.SimpleEventHub;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -46,7 +46,7 @@ public class DirectoryTargetMonitor implements TargetMonitor {
                     WatchEvent.Kind<?> kind = event.kind();
                     Path path = (Path) event.context();
                     Path child = DirectoryTargetMonitor.this.path.resolve(path);
-                    EventBusCenter.post(new FileChangeEvent(child, kind));
+                    SimpleEventHub.post(new FileChangeEvent(child, kind));
                 });
             } catch (Exception e) {
                 this.start = false;

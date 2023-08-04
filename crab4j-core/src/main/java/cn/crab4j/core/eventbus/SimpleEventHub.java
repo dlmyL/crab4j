@@ -4,15 +4,15 @@ import cn.crab4j.core.eventbus.convention.Event;
 import cn.crab4j.core.eventbus.convention.Topic;
 
 /**
- * EventBusCenter
+ * SimpleEventHub
  *
  * @author dlmyL
  */
-public class EventBusCenter {
+public class SimpleEventHub {
 
     private static final EventBus EVENT_BUS = new EventBus();
 
-    private EventBusCenter() {
+    private SimpleEventHub() {
 
     }
 

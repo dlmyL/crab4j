@@ -48,7 +48,7 @@ public class EventBus implements Bus {
 
     @Override
     public void post(Event event) {
-        this.post(event, DefaultTopic.of(Constants.DEFAULT_TOPIC));
+        this.post(event, TopicProvider.of(Constants.DEFAULT_TOPIC));
     }
 
     @Override
