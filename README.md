@@ -1,4 +1,4 @@
-## 什么是 carb4j？
+## 什么是 Crab4J？
 一个基于事件发布与订阅的通用框架，主要提供事件注册、事件监听、事件广播、事件分发等功能。
 
 ## 环境搭建
@@ -16,7 +16,7 @@
 <dependency>
     <groupId>cn.crab4j</groupId>
     <artifactId>crab4j-core</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${reversion}</version>
 </dependency>
 ```
 ### 2.通过工具直接操作
