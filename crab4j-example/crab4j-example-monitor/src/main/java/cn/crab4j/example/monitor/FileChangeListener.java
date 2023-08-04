@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.annotation.Subscribe;
+import cn.crab4j.core.annotation.Subscribe;
 
 /**
  * 文件变更监听
@@ -18,7 +18,7 @@ public class FileChangeListener {
         System.out.printf("事件次数：[%s] %n", event.sequence());
         System.out.println("==================");
 
-        // TODO 数据上报或入库
+        // fixme 数据上报或入库
 
     }
 

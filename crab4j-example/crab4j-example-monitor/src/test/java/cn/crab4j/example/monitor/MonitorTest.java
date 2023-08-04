@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.eventbus.EventBusCenter;
+import cn.crab4j.core.eventbus.EventBusCenter;
 import org.junit.Test;
 
 /**

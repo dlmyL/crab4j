@@ -1,9 +1,10 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.eventbus.Event;
+import cn.crab4j.core.eventbus.convention.Event;
 
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * 文件变更事件
@@ -11,7 +12,7 @@ import java.nio.file.WatchEvent;
  * @author dlmyL
  * @date 2023-07-30
  */
-public class FileChangeEvent extends Event {
+public class FileChangeEvent implements Event {
 
     private final Path path;
 
@@ -28,6 +29,15 @@ public class FileChangeEvent extends Event {
 
     public WatchEvent.Kind<?> getKind() {
         return kind;
+    }
+
+
+    private static final AtomicLong SEQUENCE = new AtomicLong(0);
+
+    private final long sequence = SEQUENCE.getAndIncrement();
+
+    public long sequence() {
+        return sequence;
     }
 
 }
