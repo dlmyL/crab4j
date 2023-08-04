@@ -6,6 +6,7 @@
         <artifactId>crab4j-example</artifactId>
         <groupId>cn.crab4j</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

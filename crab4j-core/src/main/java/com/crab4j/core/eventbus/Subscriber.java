@@ -1,14 +1,14 @@
-package com.crab4j.core.kernel;
+package com.crab4j.core.eventbus;
 
 import java.lang.reflect.Method;
 
 /**
  * 订阅者
+ *
  * <p>
  * Subscriber 是特定对象 Event 的订阅方法，用于执行被分发的事件。
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class Subscriber {
 

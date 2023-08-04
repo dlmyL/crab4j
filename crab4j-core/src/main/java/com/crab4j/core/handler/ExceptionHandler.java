@@ -6,7 +6,6 @@ import com.crab4j.core.context.EventContext;
  * 异常处理器
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public interface ExceptionHandler {
 

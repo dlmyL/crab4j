@@ -1,6 +1,6 @@
 package com.crab4j.core.context;
 
-import com.crab4j.core.kernel.Subscriber;
+import com.crab4j.core.eventbus.Subscriber;
 
 import java.lang.reflect.Method;
 
@@ -8,7 +8,6 @@ import java.lang.reflect.Method;
  * 事件上下文默认实现
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class SubscriberEventContext implements EventContext {
 

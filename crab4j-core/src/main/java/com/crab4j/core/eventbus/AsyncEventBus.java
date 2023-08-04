@@ -1,4 +1,4 @@
-package com.crab4j.core.kernel;
+package com.crab4j.core.eventbus;
 
 import com.crab4j.core.common.constant.Constants;
 import com.crab4j.core.common.thread.ThreadHelper;
@@ -10,7 +10,6 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 事件总线异步调度，异步也就意味着是乱序执行
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class AsyncEventBus extends EventBus {
 

@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
  * 简单的监听器
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class SimpleListener {
 

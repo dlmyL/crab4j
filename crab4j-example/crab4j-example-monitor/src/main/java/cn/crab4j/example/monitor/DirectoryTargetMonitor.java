@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.kernel.Bus;
+import com.crab4j.core.eventbus.EventBusCenter;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -14,24 +14,20 @@ import java.nio.file.WatchService;
  * 目录监听器
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class DirectoryTargetMonitor implements TargetMonitor {
 
     private WatchService watchService;
 
-    private final Bus eventBus;
-
     private final Path path;
 
     private volatile boolean start = false;
 
-    public DirectoryTargetMonitor(Bus eventBus, String targetPath) {
-        this(eventBus, targetPath, "");
+    public DirectoryTargetMonitor(String targetPath) {
+        this(targetPath, "");
     }
 
-    public DirectoryTargetMonitor(Bus eventBus, String targetPath, String... morePaths) {
-        this.eventBus = eventBus;
+    public DirectoryTargetMonitor(String targetPath, String... morePaths) {
         this.path = Paths.get(targetPath, morePaths);
     }
 
@@ -50,7 +46,7 @@ public class DirectoryTargetMonitor implements TargetMonitor {
                     WatchEvent.Kind<?> kind = event.kind();
                     Path path = (Path) event.context();
                     Path child = DirectoryTargetMonitor.this.path.resolve(path);
-                    eventBus.post(new FileChangeEvent(child, kind));
+                    EventBusCenter.post(new FileChangeEvent(child, kind));
                 });
             } catch (Exception e) {
                 this.start = false;

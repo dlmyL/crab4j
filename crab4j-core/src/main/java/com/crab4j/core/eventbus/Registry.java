@@ -1,4 +1,4 @@
-package com.crab4j.core.kernel;
+package com.crab4j.core.eventbus;
 
 import com.crab4j.core.annotation.Subscribe;
 
@@ -14,7 +14,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * 订阅者事件注册中心
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class Registry {
 

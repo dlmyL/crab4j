@@ -1,4 +1,4 @@
-package com.crab4j.core.kernel.executor;
+package com.crab4j.core.executor;
 
 import java.util.concurrent.Executor;
 
@@ -6,7 +6,6 @@ import java.util.concurrent.Executor;
  * 顺序执行器
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class SequenceExecutor implements Executor {
 

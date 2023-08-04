@@ -1,9 +1,9 @@
-package com.crab4j.core.kernel;
+package com.crab4j.core.eventbus;
 
 import com.crab4j.core.context.SubscriberEventContext;
 import com.crab4j.core.handler.ExceptionHandler;
-import com.crab4j.core.kernel.executor.PerThreadExecutor;
-import com.crab4j.core.kernel.executor.SequenceExecutor;
+import com.crab4j.core.executor.PerThreadExecutor;
+import com.crab4j.core.executor.SequenceExecutor;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -14,7 +14,6 @@ import java.util.concurrent.ExecutorService;
  * 事件分发器
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class Dispatcher {
 

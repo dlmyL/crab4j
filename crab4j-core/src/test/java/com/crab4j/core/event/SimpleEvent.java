@@ -1,12 +1,11 @@
 package com.crab4j.core.event;
 
-import com.crab4j.core.kernel.event.Event;
+import com.crab4j.core.eventbus.Event;
 
 /**
  * 简单的事件
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class SimpleEvent extends Event {
 

@@ -1,40 +1,38 @@
 package com.crab4j.core.event;
 
-import com.crab4j.core.kernel.Bus;
-import com.crab4j.core.kernel.EventBus;
+import com.crab4j.core.eventbus.Bus;
+import com.crab4j.core.eventbus.EventBus;
+import com.crab4j.core.eventbus.EventBusCenter;
 import org.junit.Test;
 
 /**
  * 简单的测试
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class EventBusTest {
 
     @Test
     public void test_EventBus() {
-        Bus bus = new EventBus();
-        bus.register(new SimpleListener());
-        bus.post("Uzi 来全杀了");
+        EventBusCenter.register(new SimpleListener());
+        EventBusCenter.post("Uzi 来全杀了");
         for (int i = 0; i <= 4; i++) {
-            bus.post(new SimpleEvent("杀疯了"));
+            EventBusCenter.post(new SimpleEvent("杀疯了"));
         }
-        bus.post(8848);
+        EventBusCenter.post(8848);
 
-        bus.close();
+        EventBusCenter.close();
     }
 
     @Test
     public void test_EventBusUseTopic() {
-        Bus bus = new EventBus();
-        bus.register(new SimpleListener());
+        EventBusCenter.register(new SimpleListener());
         for (int i = 0; i < 10; i++) {
-            bus.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
+            EventBusCenter.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
         }
-        bus.post("天神下凡", "my-topic");
+        EventBusCenter.post("天神下凡", "my-topic");
 
-        bus.close();
+        EventBusCenter.close();
     }
 
     @Test

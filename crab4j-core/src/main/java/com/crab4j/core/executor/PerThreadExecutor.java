@@ -1,4 +1,4 @@
-package com.crab4j.core.kernel.executor;
+package com.crab4j.core.executor;
 
 import com.crab4j.core.common.thread.ThreadHelper;
 
@@ -9,7 +9,6 @@ import java.util.concurrent.ExecutorService;
  * 来一个事件就有一个线程来执行
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public final class PerThreadExecutor implements Executor {
 

@@ -1,14 +1,12 @@
 package cn.crab4j.example.monitor;
 
-import com.crab4j.core.kernel.Bus;
-import com.crab4j.core.kernel.EventBus;
+import com.crab4j.core.eventbus.EventBusCenter;
 import org.junit.Test;
 
 /**
  * 监听器测试
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class MonitorTest {
 
@@ -16,10 +14,9 @@ public class MonitorTest {
 
     @Test
     public void test_monitor() throws Exception {
-        Bus bus = new EventBus();
-        bus.register(new FileChangeListener());
+        EventBusCenter.register(new FileChangeListener());
 
-        TargetMonitor monitor = new DirectoryTargetMonitor(bus, TARGET_PATH);
+        TargetMonitor monitor = new DirectoryTargetMonitor(TARGET_PATH);
 
         //Executors.newSingleThreadScheduledExecutor().schedule(() -> {
         //    try {

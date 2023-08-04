@@ -2,8 +2,8 @@ package com.crab4j.core.event;
 
 import com.crab4j.core.common.thread.ThreadHelper;
 import com.crab4j.core.handler.LoggingHandler;
-import com.crab4j.core.kernel.AsyncEventBus;
-import com.crab4j.core.kernel.Bus;
+import com.crab4j.core.eventbus.AsyncEventBus;
+import com.crab4j.core.eventbus.Bus;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
  * 简单的异步测试
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class AsyncEventBusTest {
 

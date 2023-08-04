@@ -1,10 +1,9 @@
-package com.crab4j.core.kernel;
+package com.crab4j.core.eventbus;
 
 /**
  * Bus.
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public interface Bus {
 

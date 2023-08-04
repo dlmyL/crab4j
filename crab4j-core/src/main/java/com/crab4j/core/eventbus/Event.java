@@ -1,4 +1,4 @@
-package com.crab4j.core.kernel.event;
+package com.crab4j.core.eventbus;
 
 import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLong;
@@ -7,7 +7,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * 事件抽象，提供事件执行序列
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public abstract class Event implements Serializable {
 

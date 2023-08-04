@@ -8,7 +8,6 @@ import java.util.concurrent.*;
  * ExecutorBuilder
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class ExecutorBuilder implements Builder<ThreadPoolExecutor> {
 

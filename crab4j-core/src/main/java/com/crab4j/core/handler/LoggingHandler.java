@@ -1,7 +1,7 @@
 package com.crab4j.core.handler;
 
 import com.crab4j.core.context.EventContext;
-import com.crab4j.core.kernel.EventBus;
+import com.crab4j.core.eventbus.EventBus;
 
 import java.lang.reflect.Method;
 import java.util.logging.Level;
@@ -11,7 +11,6 @@ import java.util.logging.Logger;
  * 日志处理器
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public class LoggingHandler implements ExceptionHandler {
 

@@ -7,7 +7,6 @@ import com.crab4j.core.handler.ExceptionHandler;
  * 简单的异常处理器
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class SimpleExceptionHandler implements ExceptionHandler {
 

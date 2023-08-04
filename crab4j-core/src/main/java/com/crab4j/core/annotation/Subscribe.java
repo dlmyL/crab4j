@@ -13,7 +13,6 @@ import java.lang.annotation.Target;
  * Subscribe.
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 @Inherited
 @Documented

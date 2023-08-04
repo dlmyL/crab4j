@@ -6,7 +6,6 @@ import java.lang.reflect.Method;
  * 存储事件的上下文
  *
  * @author dlmyL
- * @date 2023-07-29
  */
 public interface EventContext {
 

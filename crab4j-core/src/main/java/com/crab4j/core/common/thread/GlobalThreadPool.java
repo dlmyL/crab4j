@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutorService;
  * 全局公共线程池
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class GlobalThreadPool {
 
