@@ -8,4 +8,43 @@
 - 项目依赖管理工具：Maven 3.6.3
 
 ## 项目架构
-![crab4j](docs/imgs/crab4j.png)
+![crab4j](docs/imgs/Crab4J.png)
+
+## 如何使用？
+### 1.引入依赖
+```xml
+<dependency>
+    <groupId>cn.crab4j</groupId>
+    <artifactId>crab4j-core</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+### 2.通过工具直接操作
+```java
+public class EventBusTest {
+
+    @Test
+    public void test_EventBus() {
+        EventBusCenter.register(new SimpleListener());
+        EventBusCenter.post("Uzi 来全杀了");
+        for (int i = 0; i <= 4; i++) {
+            EventBusCenter.post(new SimpleEvent("杀疯了"));
+        }
+        EventBusCenter.post(8848);
+
+        EventBusCenter.close();
+    }
+
+    @Test
+    public void test_EventBusUseTopic() {
+        EventBusCenter.register(new SimpleListener());
+        for (int i = 0; i < 10; i++) {
+            EventBusCenter.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
+        }
+        EventBusCenter.post("天神下凡", "my-topic");
+
+        EventBusCenter.close();
+    }
+
+}
+```
