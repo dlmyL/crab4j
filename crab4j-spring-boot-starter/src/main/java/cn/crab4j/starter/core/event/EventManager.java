@@ -1,6 +1,7 @@
 package cn.crab4j.starter.core.event;
 
 import cn.crab4j.starter.core.listener.EventListener;
+import cn.crab4j.starter.exception.Crab4JException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,7 @@ public class EventManager {
     public List<EventListener> getEventListener(Class<? extends Event> eventClazz) {
         List<EventListener> eventListeners = scanListener(eventClazz);
         if (eventListeners == null || eventListeners.size() == 0) {
-            throw new RuntimeException(eventClazz + "is not registered in eventHub, please register first");
+            throw new Crab4JException(eventClazz + "is not registered in eventHub, please register first");
         }
         return eventListeners;
     }

@@ -1,6 +1,7 @@
 package cn.crab4j.starter.core.event;
 
 import cn.crab4j.starter.core.listener.EventListener;
+import cn.crab4j.starter.exception.Crab4JException;
 
 import java.lang.reflect.Method;
 
@@ -27,7 +28,7 @@ public class EventRegister {
                 return checkAndGetEventParamType(method);
             }
         }
-        throw new RuntimeException("Event param in " + eventExecutorClz + " " + EXE_METHOD
+        throw new Crab4JException("Event param in " + eventExecutorClz + " " + EXE_METHOD
                 + "() is not detected");
     }
 
@@ -43,11 +44,11 @@ public class EventRegister {
     private Class checkAndGetEventParamType(Method method) {
         Class<?>[] exeParams = method.getParameterTypes();
         if (exeParams.length == 0) {
-            throw new RuntimeException("Execute method in " + method.getDeclaringClass() + " should at least have one" +
+            throw new Crab4JException("Execute method in " + method.getDeclaringClass() + " should at least have one" +
                     " parameter");
         }
         if (!Event.class.isAssignableFrom(exeParams[0])) {
-            throw new RuntimeException("Execute method in " + method.getDeclaringClass() + " should be the subClass " +
+            throw new Crab4JException("Execute method in " + method.getDeclaringClass() + " should be the subClass " +
                     "of Event");
         }
         return exeParams[0];
