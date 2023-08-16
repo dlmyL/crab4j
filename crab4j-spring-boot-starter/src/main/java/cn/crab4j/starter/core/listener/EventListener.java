@@ -5,7 +5,7 @@ import cn.crab4j.starter.core.event.Event;
 import java.util.concurrent.ExecutorService;
 
 /**
- * 事件监听
+ * 事件监听接口
  *
  * @author dlmyL
  */

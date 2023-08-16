@@ -24,23 +24,23 @@ public class Crab4JAutoConfiguration {
     }
 
     @Bean
-    public EventRegister eventRegister(EventManager eventManager) {
-        return new EventRegister(eventManager);
+    public EventRegister eventRegister() {
+        return new EventRegister();
     }
 
     @Bean(initMethod = "init")
-    public Crab4JBootstrap bootstrap(EventRegister eventRegister) {
-        return new Crab4JBootstrap(eventRegister);
+    public Crab4JBootstrap bootstrap() {
+        return new Crab4JBootstrap();
     }
 
     @Bean
-    public EventBus eventBus(EventManager eventManager) {
-        return new EventBus(eventManager);
+    public EventBus eventBus() {
+        return new EventBus();
     }
 
     @Bean
-    public EventPublisher eventPublisher(EventBus eventBus) {
-        return new EventPublisher(eventBus);
+    public EventPublisher eventPublisher() {
+        return new EventPublisher();
     }
 
 }

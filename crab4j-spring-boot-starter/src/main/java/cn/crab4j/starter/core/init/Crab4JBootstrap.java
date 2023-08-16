@@ -6,25 +6,23 @@ import cn.crab4j.starter.core.listener.EventListener;
 import cn.crab4j.starter.logger.Logger;
 import cn.crab4j.starter.logger.LoggerFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import java.util.Map;
 
 /**
- * Crab4J 引导类
+ * Crab4J 程序引导
  *
  * @author dlmyL
  */
 public class Crab4JBootstrap implements ApplicationContextAware {
 
-    private Logger logger = LoggerFactory.getLogger(Crab4JBootstrap.class);
+    private static final Logger logger = LoggerFactory.getLogger(Crab4JBootstrap.class);
 
-    private final EventRegister eventRegister;
-
-    public Crab4JBootstrap(EventRegister eventRegister) {
-        this.eventRegister = eventRegister;
-    }
+    @Autowired
+    private EventRegister eventRegister;
 
     private ApplicationContext applicationContext;
 

@@ -1,7 +1,7 @@
 package cn.crab4j.starter.exception;
 
 /**
- * 基础异常抽象
+ * 基础抽象异常
  *
  * @author dlmyL
  */

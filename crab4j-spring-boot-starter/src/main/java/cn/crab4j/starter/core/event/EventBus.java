@@ -3,12 +3,9 @@ package cn.crab4j.starter.core.event;
 import cn.crab4j.starter.core.executor.DefaultExecutor;
 import cn.crab4j.starter.core.listener.EventListener;
 import cn.crab4j.starter.exception.ExceptionHandlerFactory;
-import cn.crab4j.starter.exception.ExceptionHandler;
 import cn.crab4j.starter.logger.Logger;
 import cn.crab4j.starter.logger.LoggerFactory;
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.stream.Collectors;
 
@@ -18,22 +15,12 @@ import java.util.stream.Collectors;
  * @author dlmyL
  */
 @SuppressWarnings("all")
-public class EventBus implements ApplicationContextAware {
+public class EventBus {
 
-    private Logger logger = LoggerFactory.getLogger(EventBus.class);
+    private static final Logger logger = LoggerFactory.getLogger(EventBus.class);
 
-    private final EventManager eventManager;
-
-    public EventBus(EventManager eventManager) {
-        this.eventManager = eventManager;
-    }
-
-    private ApplicationContext applicationContext;
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
+    @Autowired
+    private EventManager eventManager;
 
     public void post(Event event) {
         EventListener eventListener = null;
@@ -62,8 +49,7 @@ public class EventBus implements ApplicationContextAware {
 
     private void handleException(EventListener listener, Exception exception) {
         logger.error(exception.getMessage(), exception);
-        ExceptionHandler exceptionHandler = ExceptionHandlerFactory.create();
-        exceptionHandler.handler(listener, exception);
+        ExceptionHandlerFactory.getInstance().handler(listener, exception);
     }
 
 }

@@ -1,13 +1,13 @@
 package cn.crab4j.starter.exception;
 
 /**
- * ExceptionHandlerFactory
+ * 异常处理器工厂
  *
  * @author dlmyL
  */
 public class ExceptionHandlerFactory {
 
-    public static ExceptionHandler create() {
+    public static ExceptionHandler getInstance() {
         return DefaultExceptionHandler.singleton;
     }
 

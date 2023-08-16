@@ -9,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 订阅事件
+ * 事件订阅注解
  *
  * @author dlmyL
  */

@@ -5,13 +5,14 @@ import cn.crab4j.starter.logger.Logger;
 import cn.crab4j.starter.logger.LoggerFactory;
 
 /**
- * DefaultExceptionHandler
+ * 默认异常处理器
  *
  * @author dlmyL
  */
+@SuppressWarnings("rawtypes")
 public class DefaultExceptionHandler implements ExceptionHandler {
 
-    private Logger logger = LoggerFactory.getLogger(DefaultExceptionHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(DefaultExceptionHandler.class);
 
     public static DefaultExceptionHandler singleton = new DefaultExceptionHandler();
 

@@ -1,7 +1,7 @@
 package cn.crab4j.starter.logger;
 
 /**
- * SLFJLogger
+ * 日志门面
  *
  * @author dlmyL
  */

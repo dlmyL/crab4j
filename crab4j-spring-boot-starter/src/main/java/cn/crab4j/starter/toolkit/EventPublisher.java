@@ -5,6 +5,7 @@ import cn.crab4j.starter.core.event.EventBus;
 import cn.crab4j.starter.exception.Crab4JException;
 import cn.crab4j.starter.logger.Logger;
 import cn.crab4j.starter.logger.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 事件发布器
@@ -13,13 +14,10 @@ import cn.crab4j.starter.logger.LoggerFactory;
  */
 public class EventPublisher {
 
-    private Logger logger = LoggerFactory.getLogger(EventPublisher.class);
+    private static final Logger logger = LoggerFactory.getLogger(EventPublisher.class);
 
-    private final EventBus eventBus;
-
-    public EventPublisher(EventBus eventBus) {
-        this.eventBus = eventBus;
-    }
+    @Autowired
+    private EventBus eventBus;
 
     public void publish(Event event) {
         this.preCheck(event);

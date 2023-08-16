@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 开启 Crab4J 功能
+ * 在SpringBoot启动类上添加该注解开启 Crab4J 功能
  *
  * @author dlmyL
  */

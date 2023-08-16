@@ -1,7 +1,7 @@
 package cn.crab4j.starter.exception;
 
 /**
- * BasicErrorCode
+ * 基本错误代码
  *
  * @author dlmyL
  */

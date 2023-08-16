@@ -1,7 +1,7 @@
 package cn.crab4j.starter.exception;
 
 /**
- * 框架异常
+ * Crab4J 框架异常
  *
  * @author dlmyL
  */
