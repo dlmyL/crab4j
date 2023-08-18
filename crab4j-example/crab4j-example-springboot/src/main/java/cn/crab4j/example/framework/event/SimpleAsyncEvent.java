@@ -1,6 +1,6 @@
 package cn.crab4j.example.framework.event;
 
-import cn.crab4j.starter.core.event.Event;
+import cn.dlmyl.crab4j.starter.core.event.Event;
 
 /**
  * SimpleAsyncEvent

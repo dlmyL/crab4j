@@ -2,7 +2,7 @@ package cn.crab4j.example.controller;
 
 import cn.crab4j.example.framework.event.SimpleAsyncEvent;
 import cn.crab4j.example.framework.event.SimpleEvent;
-import cn.crab4j.starter.toolkit.EventPublisher;
+import cn.dlmyl.crab4j.starter.EventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

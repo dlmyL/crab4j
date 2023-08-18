@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import cn.crab4j.core.eventbus.SimpleEventHub;
+import cn.dlmyl.crab4j.SimpleEventHub;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;

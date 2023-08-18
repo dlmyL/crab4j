@@ -1,6 +1,6 @@
 package cn.crab4j.example;
 
-import cn.crab4j.starter.annotation.EnableCrab4J;
+import cn.dlmyl.crab4j.starter.annotation.EnableCrab4J;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

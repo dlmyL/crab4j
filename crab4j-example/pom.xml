@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>crab4j-all</artifactId>
-        <groupId>cn.crab4j</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>cn.dlmyl.crab4j</groupId>
+        <version>2.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>crab4j-example</artifactId>

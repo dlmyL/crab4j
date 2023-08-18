@@ -1,6 +1,6 @@
 package cn.crab4j.example.monitor;
 
-import cn.crab4j.core.annotation.Subscribe;
+import cn.dlmyl.crab4j.annotation.Subscribe;
 
 /**
  * 文件变更监听
