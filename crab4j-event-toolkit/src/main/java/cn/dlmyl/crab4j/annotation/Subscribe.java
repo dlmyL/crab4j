@@ -10,9 +10,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Subscribe.
+ * 事件订阅注解，用在所订阅的方法上
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @Inherited
 @Documented

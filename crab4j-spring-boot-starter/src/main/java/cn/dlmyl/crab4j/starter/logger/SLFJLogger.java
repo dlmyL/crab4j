@@ -3,7 +3,7 @@ package cn.dlmyl.crab4j.starter.logger;
 /**
  * 日志门面
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class SLFJLogger implements Logger {
 

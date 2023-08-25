@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 /**
  * 事件监听接口
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public interface EventListener<E extends Event> {
 

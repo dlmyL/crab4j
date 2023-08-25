@@ -10,9 +10,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 在SpringBoot启动类上添加该注解开启 Crab4J 功能
+ * 开启事件驱动
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @Inherited
 @Target({ElementType.TYPE})

@@ -5,7 +5,7 @@ import cn.dlmyl.crab4j.starter.core.listener.EventListener;
 /**
  * 异常处理器接口
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public interface ExceptionHandler {
 

@@ -1,6 +1,7 @@
 package cn.crab4j.example.monitor;
 
-import cn.dlmyl.crab4j.SimpleEventHub;
+import cn.dlmyl.crab4j.eventbus.EventBus;
+import cn.dlmyl.crab4j.eventbus.convention.Bus;
 import org.junit.Test;
 
 /**
@@ -14,9 +15,10 @@ public class MonitorTest {
 
     @Test
     public void test_monitor() throws Exception {
-        SimpleEventHub.register(new FileChangeListener());
+        Bus bus = new EventBus();
+        bus.register(new FileChangeListener());
 
-        TargetMonitor monitor = new DirectoryTargetMonitor(TARGET_PATH);
+        TargetMonitor monitor = new DirectoryTargetMonitor(bus, TARGET_PATH);
 
         //Executors.newSingleThreadScheduledExecutor().schedule(() -> {
         //    try {

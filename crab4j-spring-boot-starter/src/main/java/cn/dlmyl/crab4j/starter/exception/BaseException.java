@@ -3,7 +3,7 @@ package cn.dlmyl.crab4j.starter.exception;
 /**
  * 基础抽象异常
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public abstract class BaseException extends RuntimeException {
 

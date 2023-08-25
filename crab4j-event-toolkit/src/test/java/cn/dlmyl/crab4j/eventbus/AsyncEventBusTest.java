@@ -2,7 +2,7 @@ package cn.dlmyl.crab4j.eventbus;
 
 import cn.dlmyl.crab4j.common.thread.ThreadHelper;
 import cn.dlmyl.crab4j.eventbus.convention.Bus;
-import cn.dlmyl.crab4j.handler.LoggingHandler;
+import cn.dlmyl.crab4j.exception.DefaultExceptionHandler;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -59,7 +59,7 @@ public class AsyncEventBusTest {
 
     @Test
     public void test_EventBusHaveEx2() throws InterruptedException {
-        Bus bus = new AsyncEventBus(executor, new LoggingHandler());
+        Bus bus = new AsyncEventBus(executor, new DefaultExceptionHandler());
         bus.register(new SimpleListener());
         bus.post(new SimpleEvent("坤你太美"));
         bus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));

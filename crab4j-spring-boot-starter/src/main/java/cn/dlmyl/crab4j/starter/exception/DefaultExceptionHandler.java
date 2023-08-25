@@ -7,7 +7,7 @@ import cn.dlmyl.crab4j.starter.logger.LoggerFactory;
 /**
  * 默认异常处理器
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @SuppressWarnings("rawtypes")
 public class DefaultExceptionHandler implements ExceptionHandler {

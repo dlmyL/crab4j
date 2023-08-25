@@ -3,7 +3,7 @@ package cn.dlmyl.crab4j.starter.exception;
 /**
  * 基本错误代码
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public enum BasicErrorCode implements ErrorCode {
 

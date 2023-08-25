@@ -5,7 +5,7 @@ import java.util.concurrent.Executor;
 /**
  * 顺序执行器
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class SequenceExecutor implements Executor {
 

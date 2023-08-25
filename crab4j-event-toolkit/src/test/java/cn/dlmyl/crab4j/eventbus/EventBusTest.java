@@ -1,8 +1,7 @@
 package cn.dlmyl.crab4j.eventbus;
 
-import cn.dlmyl.crab4j.SimpleEventHub;
-import cn.dlmyl.crab4j.eventbus.convention.Bus;
-import cn.dlmyl.crab4j.handler.LoggingHandler;
+import cn.dlmyl.crab4j.exception.DefaultExceptionHandler;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -12,39 +11,47 @@ import org.junit.Test;
  */
 public class EventBusTest {
 
+    private EventBus eventBus;
+
+    @Before
+    public void init() {
+        eventBus = new EventBus();
+    }
+
     @Test
     public void test_EventBus() {
-        SimpleEventHub.register(new SimpleListener());
-        SimpleEventHub.post(new SimpleEvent("Uzi 来全杀了"));
-        SimpleEventHub.post(new IntegerEvent(6379));
-        SimpleEventHub.close();
+        eventBus.register(new SimpleListener());
+        eventBus.post(new SimpleEvent("Uzi 来全杀了"));
+        eventBus.post(new IntegerEvent(6379));
+
+        eventBus.close();
     }
 
     @Test
     public void test_EventBusUseTopic() {
-        SimpleEventHub.register(new SimpleListener());
-        SimpleEventHub.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
-        SimpleEventHub.post(new SimpleEvent("天神下凡"), TopicProvider.of("my-topic"));
+        eventBus.register(new SimpleListener());
+        eventBus.post(new SimpleEvent("中下野辅，别坑我 Shy 哥"));
+        eventBus.post(new SimpleEvent("天神下凡"), TopicProvider.of("my-topic"));
 
-        SimpleEventHub.close();
+        eventBus.close();
     }
 
     @Test
     public void test_EventBusHaveEx1() {
-        Bus bus = new EventBus(new SimpleExceptionHandler());
-        bus.register(new SimpleListener());
-        bus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));
+        eventBus = new EventBus(new SimpleExceptionHandler());
+        eventBus.register(new SimpleListener());
+        eventBus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));
 
-        bus.close();
+        eventBus.close();
     }
 
     @Test
     public void test_EventBusHaveEx2() {
-        Bus bus = new EventBus(new LoggingHandler());
-        bus.register(new SimpleListener());
-        bus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));
+        eventBus = new EventBus(new DefaultExceptionHandler());
+        eventBus.register(new SimpleListener());
+        eventBus.post(new SimpleEvent("教练，我想打篮球"), TopicProvider.of("ex-topic"));
 
-        bus.close();
+        eventBus.close();
     }
 
 }

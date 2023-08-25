@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 /**
  * 事件订阅注解
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @Component
 @Inherited

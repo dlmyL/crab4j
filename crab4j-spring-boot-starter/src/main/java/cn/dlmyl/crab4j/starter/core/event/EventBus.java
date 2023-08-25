@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * 事件总线
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @SuppressWarnings("all")
 public class EventBus {

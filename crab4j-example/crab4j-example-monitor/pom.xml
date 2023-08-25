@@ -6,8 +6,7 @@
     <parent>
         <artifactId>crab4j-example</artifactId>
         <groupId>cn.dlmyl.crab4j</groupId>
-        <version>2.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>2.0.1</version>
     </parent>
 
     <artifactId>crab4j-example-monitor</artifactId>
@@ -25,7 +24,7 @@
         <dependency>
             <groupId>cn.dlmyl.crab4j</groupId>
             <artifactId>crab4j-event-toolkit</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>2.0.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

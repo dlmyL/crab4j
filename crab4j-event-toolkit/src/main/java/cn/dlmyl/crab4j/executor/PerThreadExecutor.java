@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 /**
  * 来一个事件就有一个线程来执行
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public final class PerThreadExecutor implements Executor {
 

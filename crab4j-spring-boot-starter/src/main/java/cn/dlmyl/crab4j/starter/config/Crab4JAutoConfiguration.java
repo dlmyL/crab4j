@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Crab4J 自动配置类
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @Configuration
 @ComponentScan(value = {"cn.dlmyl.crab4j.starter"})

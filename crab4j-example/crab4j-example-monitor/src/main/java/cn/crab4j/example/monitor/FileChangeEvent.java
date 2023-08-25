@@ -10,7 +10,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * 文件变更事件
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class FileChangeEvent implements Event {
 

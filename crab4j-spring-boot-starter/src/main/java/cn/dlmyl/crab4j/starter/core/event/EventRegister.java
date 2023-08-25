@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * 事件注册器
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 @SuppressWarnings("all")
 public class EventRegister {

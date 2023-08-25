@@ -6,7 +6,7 @@ import cn.dlmyl.crab4j.eventbus.convention.Topic;
 /**
  * TopicProvider
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class TopicProvider implements Topic {
 

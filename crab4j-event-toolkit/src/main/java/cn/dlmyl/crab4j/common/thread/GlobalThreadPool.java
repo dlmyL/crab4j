@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 /**
  * 全局公共线程池
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class GlobalThreadPool {
 

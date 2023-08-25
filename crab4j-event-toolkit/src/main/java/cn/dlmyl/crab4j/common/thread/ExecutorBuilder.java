@@ -12,9 +12,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ExecutorBuilder
+ * Executor 构建器
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class ExecutorBuilder implements Builder<ThreadPoolExecutor> {
 

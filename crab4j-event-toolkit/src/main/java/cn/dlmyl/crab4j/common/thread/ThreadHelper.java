@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 线程操作助手
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class ThreadHelper {
 

@@ -2,14 +2,14 @@ package cn.dlmyl.crab4j.eventbus;
 
 import cn.dlmyl.crab4j.common.constant.Constants;
 import cn.dlmyl.crab4j.common.thread.ThreadHelper;
-import cn.dlmyl.crab4j.handler.ExceptionHandler;
+import cn.dlmyl.crab4j.exception.ExceptionHandler;
 
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Async Event Bus.
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class AsyncEventBus extends EventBus {
 

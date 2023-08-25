@@ -4,14 +4,14 @@ import cn.dlmyl.crab4j.common.constant.Constants;
 import cn.dlmyl.crab4j.eventbus.convention.Bus;
 import cn.dlmyl.crab4j.eventbus.convention.Event;
 import cn.dlmyl.crab4j.eventbus.convention.Topic;
-import cn.dlmyl.crab4j.handler.ExceptionHandler;
+import cn.dlmyl.crab4j.exception.ExceptionHandler;
 
 import java.util.concurrent.Executor;
 
 /**
  * 事件总线同步调度，同步也就意味着是有序执行
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class EventBus implements Bus {
 

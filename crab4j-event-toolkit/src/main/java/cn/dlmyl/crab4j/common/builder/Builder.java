@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Builder.
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public interface Builder<T> extends Serializable {
 

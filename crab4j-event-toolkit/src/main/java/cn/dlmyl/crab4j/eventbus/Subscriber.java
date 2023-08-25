@@ -3,9 +3,9 @@ package cn.dlmyl.crab4j.eventbus;
 import java.lang.reflect.Method;
 
 /**
- * Subscriber
+ * 订阅者
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class Subscriber {
 

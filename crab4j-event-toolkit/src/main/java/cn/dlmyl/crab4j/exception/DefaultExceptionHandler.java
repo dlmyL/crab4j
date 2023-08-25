@@ -1,4 +1,4 @@
-package cn.dlmyl.crab4j.handler;
+package cn.dlmyl.crab4j.exception;
 
 import cn.dlmyl.crab4j.context.EventContext;
 import cn.dlmyl.crab4j.eventbus.EventBus;
@@ -8,11 +8,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 日志处理器
+ * 默认的日志处理器
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
-public class LoggingHandler implements ExceptionHandler {
+public class DefaultExceptionHandler implements ExceptionHandler {
 
     @Override
     public void handle(Throwable cause, EventContext context) {

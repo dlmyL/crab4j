@@ -6,7 +6,6 @@ import cn.dlmyl.crab4j.annotation.Subscribe;
  * 文件变更监听
  *
  * @author dlmyL
- * @date 2023-07-30
  */
 public class FileChangeListener {
 
@@ -18,7 +17,7 @@ public class FileChangeListener {
         System.out.printf("事件次数：[%s] %n", event.sequence());
         System.out.println("==================");
 
-        // fixme 数据上报或入库
+        // TODO 数据上报或入库
 
     }
 

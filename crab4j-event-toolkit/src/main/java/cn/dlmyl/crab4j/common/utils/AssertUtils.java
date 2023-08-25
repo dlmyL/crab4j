@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * AssertUtils
+ * 断言工具类
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class AssertUtils {
 

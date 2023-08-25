@@ -1,7 +1,7 @@
 package cn.dlmyl.crab4j.eventbus;
 
 import cn.dlmyl.crab4j.context.EventContext;
-import cn.dlmyl.crab4j.handler.ExceptionHandler;
+import cn.dlmyl.crab4j.exception.ExceptionHandler;
 
 /**
  * 简单的异常处理器

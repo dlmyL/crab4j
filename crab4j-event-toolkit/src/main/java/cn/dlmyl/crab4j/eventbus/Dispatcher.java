@@ -6,7 +6,7 @@ import cn.dlmyl.crab4j.eventbus.convention.Event;
 import cn.dlmyl.crab4j.eventbus.convention.Topic;
 import cn.dlmyl.crab4j.executor.PerThreadExecutor;
 import cn.dlmyl.crab4j.executor.SequenceExecutor;
-import cn.dlmyl.crab4j.handler.ExceptionHandler;
+import cn.dlmyl.crab4j.exception.ExceptionHandler;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutorService;
 /**
  * 事件分发器
  *
- * @author dlmyL
+ * @author <a href="https://dlmyl.github.io">dlmyL</a>
  */
 public class Dispatcher {
 
