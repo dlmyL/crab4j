@@ -2,6 +2,8 @@ package cn.dlmyl.crab4j.starter.core.event;
 
 import cn.dlmyl.crab4j.starter.core.listener.EventListener;
 import cn.dlmyl.crab4j.starter.exception.Crab4JException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
@@ -15,11 +17,8 @@ public class EventRegister {
 
     private final static String EXE_METHOD = "onMessage";
 
-    private final EventManager eventManager;
-
-    public EventRegister(EventManager eventManager) {
-        this.eventManager = eventManager;
-    }
+    @Autowired
+    private EventManager eventManager;
 
     private Class<? extends Event> getEventFromExecutor(Class<?> eventExecutorClz) {
         Method[] methods = eventExecutorClz.getDeclaredMethods();

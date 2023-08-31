@@ -1,10 +1,10 @@
 package cn.dlmyl.crab4j.starter.config;
 
+import cn.dlmyl.crab4j.starter.Pub;
 import cn.dlmyl.crab4j.starter.core.event.EventBus;
 import cn.dlmyl.crab4j.starter.core.event.EventManager;
 import cn.dlmyl.crab4j.starter.core.event.EventRegister;
 import cn.dlmyl.crab4j.starter.core.init.Crab4JBootstrap;
-import cn.dlmyl.crab4j.starter.EventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,23 +24,23 @@ public class Crab4JAutoConfiguration {
     }
 
     @Bean
-    public EventRegister eventRegister(EventManager eventManager) {
-        return new EventRegister(eventManager);
+    public EventRegister eventRegister() {
+        return new EventRegister();
     }
 
     @Bean(initMethod = "init")
-    public Crab4JBootstrap bootstrap(EventRegister eventRegister) {
-        return new Crab4JBootstrap(eventRegister);
+    public Crab4JBootstrap bootstrap() {
+        return new Crab4JBootstrap();
     }
 
     @Bean
-    public EventBus eventBus(EventManager eventManager) {
-        return new EventBus(eventManager);
+    public EventBus eventBus() {
+        return new EventBus();
     }
 
     @Bean
-    public EventPublisher eventPublisher(EventBus eventBus) {
-        return new EventPublisher(eventBus);
+    public Pub eventPublisher() {
+        return Pub.X;
     }
 
 }

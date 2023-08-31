@@ -2,7 +2,7 @@ package cn.crab4j.example.framework.listener;
 
 import cn.crab4j.example.framework.event.SimpleAsyncEvent;
 import cn.crab4j.example.framework.executor.SimpleExecutor;
-import cn.dlmyl.crab4j.starter.core.event.Subscribe;
+import cn.dlmyl.crab4j.starter.core.event.Sub;
 import cn.dlmyl.crab4j.starter.core.listener.EventListener;
 
 import java.util.concurrent.ExecutorService;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author dlmyL
  */
-@Subscribe
+@Sub
 public class SimpleAsyncListener implements EventListener<SimpleAsyncEvent> {
 
     @Override
@@ -24,15 +24,15 @@ public class SimpleAsyncListener implements EventListener<SimpleAsyncEvent> {
     @Override
     public void onMessage(SimpleAsyncEvent event) {
 
-        System.out.println("SimpleAsyncListener#onMessage 接收到异步事件：" + event.getMessage());
+        System.out.println("异步事件消费者：" + event.getMessage());
 
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        System.out.println("SimpleAsyncListener#onMessage 处理异步事件完成");
+        System.out.println("异步事件消费者：completed");
     }
 
 }

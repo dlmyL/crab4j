@@ -1,7 +1,7 @@
 package cn.crab4j.example.framework.listener;
 
 import cn.crab4j.example.framework.event.SimpleEvent;
-import cn.dlmyl.crab4j.starter.core.event.Subscribe;
+import cn.dlmyl.crab4j.starter.core.event.Sub;
 import cn.dlmyl.crab4j.starter.core.listener.EventListener;
 
 import java.util.concurrent.TimeUnit;
@@ -11,21 +11,21 @@ import java.util.concurrent.TimeUnit;
  *
  * @author dlmyL
  */
-@Subscribe
+@Sub
 public class SimpleListener implements EventListener<SimpleEvent> {
 
     @Override
     public void onMessage(SimpleEvent simpleEvent) {
 
-        System.out.println("SimpleListener#onMessage 接收到同步事件：" + simpleEvent.getMessage());
+        System.out.println("同步事件消费者：" + simpleEvent.getMessage());
 
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        System.out.println("SimpleListener#onMessage 处理同步事件完成");
+        System.out.println("同步事件消费者：completed");
     }
 
 }

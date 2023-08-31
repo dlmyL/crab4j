@@ -5,6 +5,7 @@ import cn.dlmyl.crab4j.starter.core.listener.EventListener;
 import cn.dlmyl.crab4j.starter.exception.ExceptionHandlerFactory;
 import cn.dlmyl.crab4j.starter.logger.Logger;
 import cn.dlmyl.crab4j.starter.logger.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.stream.Collectors;
 
@@ -18,11 +19,8 @@ public class EventBus {
 
     private static final Logger logger = LoggerFactory.getLogger(EventBus.class);
 
-    private final EventManager eventManager;
-
-    public EventBus(EventManager eventManager) {
-        this.eventManager = eventManager;
-    }
+    @Autowired
+    private EventManager eventManager;
 
     public void post(Event event) {
         EventListener eventListener = null;

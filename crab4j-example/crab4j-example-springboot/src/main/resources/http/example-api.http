@@ -6,3 +6,6 @@ GET http://localhost:9000/async-event
 
 ### mixed-event
 GET http://localhost:9000/mixed-event
+
+### test
+GET http://localhost:9000/test
