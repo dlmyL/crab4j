@@ -9,13 +9,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * 默认执行器
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 1.0
  */
 public class DefaultExecutor {
 
-    /**
-     * 如果处理器无定制线程池，则使用该线程池
-     */
     public static final ExecutorService ASYNC_EXECUTOR = new ThreadPoolExecutor(
             Runtime.getRuntime().availableProcessors() + 1,
             Runtime.getRuntime().availableProcessors() * 2,

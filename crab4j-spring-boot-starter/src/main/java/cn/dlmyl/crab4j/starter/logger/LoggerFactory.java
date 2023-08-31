@@ -3,7 +3,8 @@ package cn.dlmyl.crab4j.starter.logger;
 /**
  * 日志工厂
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 2.0
  */
 public class LoggerFactory {
 

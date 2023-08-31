@@ -10,9 +10,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 开启事件驱动
+ * 开启 Crab4J
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 1.0
  */
 @Inherited
 @Target({ElementType.TYPE})

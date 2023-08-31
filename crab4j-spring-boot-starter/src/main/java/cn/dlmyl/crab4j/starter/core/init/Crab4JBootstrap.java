@@ -13,9 +13,10 @@ import org.springframework.context.ApplicationContextAware;
 import java.util.Map;
 
 /**
- * Crab4J 程序引导
+ * Crab4J 程序引导类，在此类中完成初始化工作
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 1.0
  */
 public class Crab4JBootstrap implements ApplicationContextAware {
 
@@ -36,12 +37,12 @@ public class Crab4JBootstrap implements ApplicationContextAware {
      */
     @SuppressWarnings("rawtypes")
     public void init() {
-        logger.info("开始注册EventListener...");
+        logger.info("Start registering EventListener...");
         Map<String, Object> eventListenerBeans = applicationContext.getBeansWithAnnotation(Sub.class);
         eventListenerBeans.values().forEach(
                 listener -> eventRegister.doRegistration((EventListener) listener)
         );
-        logger.info("EventListener注册完成...");
+        logger.info("EventListener registration completed!");
     }
 
 }

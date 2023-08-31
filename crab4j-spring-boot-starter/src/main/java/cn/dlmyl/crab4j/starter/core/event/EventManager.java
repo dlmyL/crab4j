@@ -10,13 +10,14 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 事件管理器
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 1.0
  */
 @SuppressWarnings("rawtypes")
 public class EventManager {
 
     /**
-     * 事件仓库
+     * 存放注册的事件
      */
     private static final ConcurrentHashMap<Class, List<EventListener>> EVENT_REPOSITORY = new ConcurrentHashMap<>();
 
@@ -36,7 +37,7 @@ public class EventManager {
      * 获取事件监听集合
      *
      * @param eventClazz 事件类
-     * @return 时间监听集合
+     * @return 事件监听集合
      */
     public List<EventListener> getEventListener(Class<? extends Event> eventClazz) {
         List<EventListener> eventListeners = scanListener(eventClazz);

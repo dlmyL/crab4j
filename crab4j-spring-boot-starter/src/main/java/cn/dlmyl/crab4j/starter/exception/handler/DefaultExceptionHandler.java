@@ -1,28 +1,24 @@
-package cn.dlmyl.crab4j.starter.exception;
+package cn.dlmyl.crab4j.starter.exception.handler;
 
 import cn.dlmyl.crab4j.starter.core.listener.EventListener;
+import cn.dlmyl.crab4j.starter.exception.BaseException;
+import cn.dlmyl.crab4j.starter.exception.BasicErrorCode;
+import cn.dlmyl.crab4j.starter.exception.ErrorCode;
 import cn.dlmyl.crab4j.starter.logger.Logger;
 import cn.dlmyl.crab4j.starter.logger.LoggerFactory;
 
 /**
  * 默认异常处理器
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 1.0
  */
 @SuppressWarnings("rawtypes")
-public class DefaultExceptionHandler implements ExceptionHandler {
+public enum DefaultExceptionHandler implements ExceptionHandler {
+
+    X;
 
     private static final Logger logger = LoggerFactory.getLogger(DefaultExceptionHandler.class);
-
-    private DefaultExceptionHandler() {
-
-    }
-
-    private static final DefaultExceptionHandler SINGLETON = new DefaultExceptionHandler();
-
-    public static DefaultExceptionHandler getInstance() {
-        return SINGLETON;
-    }
 
     @Override
     public void handler(EventListener listener, Exception exception) {

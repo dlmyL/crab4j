@@ -3,7 +3,8 @@ package cn.dlmyl.crab4j.starter.exception;
 /**
  * Crab4J 框架异常
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 1.0
  */
 public class Crab4JException extends BaseException {
 

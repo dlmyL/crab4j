@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * 事件发布器
  *
- * @author <a href="https://dlmyl.github.io">dlmyL</a>
+ * @author <a href="https://github.com/dlmyL">dlmyL</a>
+ * @version 2.0
  */
 public enum Pub {
 
