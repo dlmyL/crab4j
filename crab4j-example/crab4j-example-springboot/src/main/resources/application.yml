@@ -2,4 +2,4 @@ server:
   port: 9000
 spring:
   application:
-    name: Example-Service
+    name: Example-SpringBoot

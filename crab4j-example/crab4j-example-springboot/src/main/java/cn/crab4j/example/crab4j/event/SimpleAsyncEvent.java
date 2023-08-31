@@ -1,9 +1,9 @@
-package cn.crab4j.example.framework.event;
+package cn.crab4j.example.crab4j.event;
 
 import cn.dlmyl.crab4j.starter.core.event.Event;
 
 /**
- * SimpleAsyncEvent
+ * 一个简单的异步事件
  *
  * @author dlmyL
  */

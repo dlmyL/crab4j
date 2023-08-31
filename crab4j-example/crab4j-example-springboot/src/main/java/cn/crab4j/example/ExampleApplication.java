@@ -1,7 +1,7 @@
 package cn.crab4j.example;
 
-import cn.crab4j.example.framework.event.SimpleAsyncEvent;
-import cn.crab4j.example.framework.event.SimpleEvent;
+import cn.crab4j.example.crab4j.event.SimpleAsyncEvent;
+import cn.crab4j.example.crab4j.event.SimpleEvent;
 import cn.dlmyl.crab4j.starter.Pub;
 import cn.dlmyl.crab4j.starter.annotation.EnableCrab4J;
 import org.springframework.boot.SpringApplication;
@@ -23,23 +23,34 @@ public class ExampleApplication {
         SpringApplication.run(ExampleApplication.class, args);
     }
 
-    /*
-      使用方式：
-        1、pom 中引入依赖
-        2、启动类上加上 @EnableCrab4J 注解
-        3、执行 Pub.X.event(event);
-     */
+    @GetMapping("/event")
+    public String event() {
+        // 发布同步事件（会阻塞主线程，一般不建议使用）
+        Pub.X.event(new SimpleEvent.Builder().message("Uzi 来全杀了").build(), true);
+        System.out.println("ExampleApplication#event 主线程：我在这里干等着");
+        return "OK";
+    }
 
-    @GetMapping("/test")
-    public String test() {
+    @GetMapping("/async-event")
+    public String asyncEvent() {
         // 发布异步事件（推荐使用）
-        Pub.X.event(new SimpleAsyncEvent.Builder().message("async message producer").build());
-        System.out.println("异步事件不会阻塞主线程，建议使用");
+        Pub.X.event(new SimpleAsyncEvent.Builder().message("Shy 哥天神下凡").build());
+        System.out.println("ExampleApplication#asyncEvent 主线程：我可以干其他事情");
+        return "OK";
+    }
+
+
+    // TIPS: 发布混合事件时，一定要把异步事件放在前面
+
+    @GetMapping("/mixed-event")
+    public String mixedEvent() {
+        // 发布异步事件（推荐使用）
+        Pub.X.event(new SimpleAsyncEvent.Builder().message("Shy 哥天神下凡").build());
+        System.out.println("ExampleApplication#mixedEvent 主线程：我可以干其他事情");
 
         // 发布同步事件（会阻塞主线程，一般不建议使用）
-        Pub.X.event(new SimpleEvent.Builder().message("sync message producer").build(), true);
-        System.out.println("同步事件会阻塞主线程，不建议使用");
-
+        Pub.X.event(new SimpleEvent.Builder().message("Uzi 来全杀了").build(), true);
+        System.out.println("ExampleApplication#mixedEvent 主线程：我在这里干等着");
         return "OK";
     }
 

@@ -1,11 +1,8 @@
-### event
+### 发布同步事件
 GET http://localhost:9000/event
 
-### async-event
+### 发布异步事件
 GET http://localhost:9000/async-event
 
-### mixed-event
+### 发布混合事件
 GET http://localhost:9000/mixed-event
-
-### test
-GET http://localhost:9000/test

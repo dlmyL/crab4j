@@ -1,4 +1,4 @@
-package cn.crab4j.example.framework.executor;
+package cn.crab4j.example.crab4j.executor;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * SimpleExecutor
+ * 一个简单的执行器
  *
  * @author dlmyL
  */
