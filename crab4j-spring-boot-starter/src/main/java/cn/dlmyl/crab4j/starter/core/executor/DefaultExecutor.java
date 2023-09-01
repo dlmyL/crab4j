@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class DefaultExecutor {
 
-    public static final ExecutorService ASYNC_EXECUTOR = new ThreadPoolExecutor(
+    public static final ExecutorService X = new ThreadPoolExecutor(
             Runtime.getRuntime().availableProcessors() + 1,
             Runtime.getRuntime().availableProcessors() * 2,
             60L,

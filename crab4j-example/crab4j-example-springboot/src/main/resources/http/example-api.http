@@ -1,4 +1,7 @@
-### 发布同步事件
+### 发布有返回值的同步事件
+GET http://localhost:9000/eventResp
+
+### 发布没有返回值的同步事件
 GET http://localhost:9000/event
 
 ### 发布异步事件

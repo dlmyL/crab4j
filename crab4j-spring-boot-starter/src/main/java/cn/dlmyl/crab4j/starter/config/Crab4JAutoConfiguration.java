@@ -4,6 +4,7 @@ import cn.dlmyl.crab4j.starter.Pub;
 import cn.dlmyl.crab4j.starter.core.event.EventBus;
 import cn.dlmyl.crab4j.starter.core.event.EventManager;
 import cn.dlmyl.crab4j.starter.core.event.EventRegister;
+import cn.dlmyl.crab4j.starter.core.event.EventRepository;
 import cn.dlmyl.crab4j.starter.core.init.Crab4JBootstrap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,6 +26,11 @@ public class Crab4JAutoConfiguration {
     }
 
     @Bean
+    public EventRepository eventRepository() {
+        return new EventRepository();
+    }
+
+    @Bean
     public EventRegister eventRegister() {
         return new EventRegister();
     }
@@ -40,7 +46,7 @@ public class Crab4JAutoConfiguration {
     }
 
     @Bean
-    public Pub eventPublisher() {
+    public Pub pub() {
         return Pub.X;
     }
 

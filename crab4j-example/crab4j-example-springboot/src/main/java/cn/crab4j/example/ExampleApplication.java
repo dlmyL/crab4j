@@ -2,8 +2,12 @@ package cn.crab4j.example;
 
 import cn.crab4j.example.crab4j.event.SimpleAsyncEvent;
 import cn.crab4j.example.crab4j.event.SimpleEvent;
+import cn.crab4j.example.crab4j.listener.SimpleListener;
 import cn.dlmyl.crab4j.starter.Pub;
 import cn.dlmyl.crab4j.starter.annotation.EnableCrab4J;
+import cn.dlmyl.crab4j.starter.core.event.Response;
+import cn.dlmyl.crab4j.starter.logger.Logger;
+import cn.dlmyl.crab4j.starter.logger.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,23 +23,36 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class ExampleApplication {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(SimpleListener.class);
+
     public static void main(String[] args) {
         SpringApplication.run(ExampleApplication.class, args);
     }
 
+    @GetMapping("/eventResp")
+    public String eventResp() {
+        // 发布有返回值的同步事件（不推荐）
+        Response response = Pub.X.eventResp(new SimpleEvent.Builder().message("Uzi 来全杀了").build());
+        if (response.isSuccess()) {
+            LOGGER.info("有返回值的同步事件执行成功");
+        }
+        LOGGER.info("=== 主线程 ===：我在这里干等着");
+        return "OK";
+    }
+
     @GetMapping("/event")
     public String event() {
-        // 发布同步事件（会阻塞主线程，一般不建议使用）
+        // 发布没有返回值的同步事件（不推荐）
         Pub.X.event(new SimpleEvent.Builder().message("Uzi 来全杀了").build(), true);
-        System.out.println("ExampleApplication#event 主线程：我在这里干等着");
+        LOGGER.info("=== 主线程 ===：我在这里干等着");
         return "OK";
     }
 
     @GetMapping("/async-event")
     public String asyncEvent() {
         // 发布异步事件（推荐使用）
-        Pub.X.event(new SimpleAsyncEvent.Builder().message("Shy 哥天神下凡").build());
-        System.out.println("ExampleApplication#asyncEvent 主线程：我可以干其他事情");
+        Pub.X.event(new SimpleAsyncEvent.Builder().message("中下野辅，别坑我 Shy 哥").build());
+        LOGGER.info("=== 主线程 ===：我可以干其他事情");
         return "OK";
     }
 
@@ -44,13 +61,13 @@ public class ExampleApplication {
 
     @GetMapping("/mixed-event")
     public String mixedEvent() {
-        // 发布异步事件（推荐使用）
-        Pub.X.event(new SimpleAsyncEvent.Builder().message("Shy 哥天神下凡").build());
-        System.out.println("ExampleApplication#mixedEvent 主线程：我可以干其他事情");
+        // 发布异步事件
+        Pub.X.event(new SimpleAsyncEvent.Builder().message("我下路怎么做事").build());
+        LOGGER.info("=== 主线程 ===：我可以干其他事情");
 
-        // 发布同步事件（会阻塞主线程，一般不建议使用）
-        Pub.X.event(new SimpleEvent.Builder().message("Uzi 来全杀了").build(), true);
-        System.out.println("ExampleApplication#mixedEvent 主线程：我在这里干等着");
+        // 发布同步事件
+        Pub.X.event(new SimpleEvent.Builder().message("质疑、理解、成为、超越").build(), true);
+        LOGGER.info("=== 主线程 ===：我在这里干等着");
         return "OK";
     }
 

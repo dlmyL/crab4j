@@ -1,7 +1,8 @@
 package cn.dlmyl.crab4j.starter;
 
+import cn.dlmyl.crab4j.starter.core.event.Bus;
 import cn.dlmyl.crab4j.starter.core.event.Event;
-import cn.dlmyl.crab4j.starter.core.event.EventBus;
+import cn.dlmyl.crab4j.starter.core.event.Response;
 import cn.dlmyl.crab4j.starter.exception.Crab4JException;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,39 +20,32 @@ public enum Pub {
     X;
 
     @Autowired
-    private EventBus eventBus;
+    private Bus bus;
 
-    /**
-     * 发布事件，默认是异步事件
-     *
-     * @param event 事件对象
-     */
-    public void event(Event event) {
+    public Response eventResp(Event event) {
         preCheck(event);
-        eventBus.asyncPost(event);
+        return bus.post(event);
     }
 
-    /**
-     * 发布事件，通过 needSync 参数控制是同步发送还是异步发送
-     *
-     * @param event 事件对象
-     * @param needSync 控制发送是同步还是异步
-     */
+    public void event(Event event) {
+        this.event(event, false);
+    }
+
     public void event(Event event, boolean needSync) {
         preCheck(event);
         if (needSync) {
-            eventBus.post(event);
+            bus.post(event);
         } else {
-            eventBus.asyncPost(event);
+            bus.asyncPost(event);
         }
     }
 
     private void preCheck(Event event) {
+        if (bus == null) {
+            throw new Crab4JException("Please use the @EnableCrab4J annotation on the startup class.");
+        }
         if (event == null) {
             throw new IllegalArgumentException("this argument is required, it must not be null.");
-        }
-        if (eventBus == null) {
-            throw new Crab4JException("Please use the @EnableCrab4J annotation on the startup class.");
         }
     }
 

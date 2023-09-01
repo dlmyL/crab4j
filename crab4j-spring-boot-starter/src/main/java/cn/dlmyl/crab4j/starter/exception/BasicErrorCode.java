@@ -10,7 +10,7 @@ public enum BasicErrorCode implements ErrorCode {
 
     CRAB4J_FRAMEWORK_ERROR("CRAB4J_FRAMEWORK_ERROR" , "CRAB4J框架内部错误"),
 
-    CRAB4J_UNKNOWN_ERROR("CRAB4J_UNKNOWN_ERROR" , "CRAB4J框架未知错误");
+    UNKNOWN_ERROR("UNKNOWN_ERROR" , "未知的系统错误");
 
     private String errCode;
     private String errMsg;
