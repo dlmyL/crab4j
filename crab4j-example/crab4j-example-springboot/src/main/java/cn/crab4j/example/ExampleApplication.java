@@ -8,8 +8,10 @@ import cn.dlmyl.crab4j.starter.annotation.EnableCrab4J;
 import cn.dlmyl.crab4j.starter.core.event.Response;
 import cn.dlmyl.crab4j.starter.logger.Logger;
 import cn.dlmyl.crab4j.starter.logger.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ApplicationContextInitializer;
+import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +28,13 @@ public class ExampleApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleListener.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(ExampleApplication.class, args);
+        new SpringApplicationBuilder()
+                .sources(ExampleApplication.class)
+                .initializers((ApplicationContextInitializer<GenericApplicationContext>) ctx -> {
+                    // 在程序运行前向上下文中注入bean
+                    ctx.registerBean("crab4j", Pub.class, Pub.X);
+                })
+                .run(args);
     }
 
     @GetMapping("/eventResp")

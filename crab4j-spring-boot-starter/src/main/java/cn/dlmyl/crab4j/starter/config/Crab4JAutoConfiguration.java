@@ -1,6 +1,5 @@
 package cn.dlmyl.crab4j.starter.config;
 
-import cn.dlmyl.crab4j.starter.Pub;
 import cn.dlmyl.crab4j.starter.core.event.EventBus;
 import cn.dlmyl.crab4j.starter.core.event.EventManager;
 import cn.dlmyl.crab4j.starter.core.event.EventRegister;
@@ -45,9 +44,9 @@ public class Crab4JAutoConfiguration {
         return new EventBus();
     }
 
-    @Bean
-    public Pub pub() {
-        return Pub.X;
-    }
+    //@Bean
+    //public Pub pub() {
+    //    return Pub.X;
+    //}
 
 }
