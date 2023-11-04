@@ -1,7 +1,5 @@
 ## 项目介绍
-一个基于事件发布与订阅的轻量级框架，分别使用两种不同的方式去实现：
-1. crab4j-event-toolkit：无任何外部依赖的轻量工具，以 toolkit 包的形式提供服务
-2. crab4j-spring-boot-starter：充分利用 Spring 框架特性，以 starter 包的形式提供服务
+一个基于事件发布与订阅的轻量级框架。
 
 ### 项目背景
 在工作中，当一个事件的产生，需要去触发很多事件时，我们通常会在事件产生方中分别的去调用那些事件消费方，这样往往是很浪费资源的，
@@ -20,7 +18,7 @@
 - 事件分组
 
 ## 项目架构
-![crab4j-event-toolkit](docs/imgs/Crab4J.png)
+![crab4j-core](docs/imgs/Crab4J.png)
 
 ## 许可
 Crab4J 基于 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) 许可证。

@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>crab4j-all</artifactId>
+        <artifactId>crab4j-example</artifactId>
         <groupId>cn.dlmyl.crab4j</groupId>
         <version>2.0.1</version>
     </parent>
 
-    <artifactId>crab4j-spring-boot-starter</artifactId>
+    <artifactId>crab4j-example-monitor</artifactId>
 
     <name>${project.artifactId}</name>
-    <description>Crab4J Starter</description>
+    <description>无框架整合案例</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -27,30 +27,9 @@
             <version>2.0.1</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>provided</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

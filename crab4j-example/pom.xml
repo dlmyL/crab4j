@@ -16,7 +16,7 @@
     <description>整合案例</description>
 
     <modules>
-        <module>crab4j-example-monitor</module>
+        <module>crab4j-example-frameless</module>
         <module>crab4j-example-springboot</module>
     </modules>
 

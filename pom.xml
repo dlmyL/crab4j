@@ -12,10 +12,9 @@
     <description>一个基于事件发布与订阅的通用框架</description>
 
     <modules>
-        <module>crab4j-event-toolkit</module>
+        <module>crab4j-core</module>
         <module>crab4j-example</module>
         <module>crab4j-spring-boot-starter</module>
-        <module>crab4j-core</module>
     </modules>
 
     <properties>
