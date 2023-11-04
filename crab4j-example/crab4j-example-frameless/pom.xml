@@ -9,7 +9,7 @@
         <version>2.0.1</version>
     </parent>
 
-    <artifactId>crab4j-example-monitor</artifactId>
+    <artifactId>crab4j-example-frameless</artifactId>
 
     <name>${project.artifactId}</name>
     <description>无框架整合案例</description>
