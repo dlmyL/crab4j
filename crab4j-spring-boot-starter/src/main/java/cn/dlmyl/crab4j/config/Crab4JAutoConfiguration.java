@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Crab4J 自动配置类
+ * Crab4J 自动装配
  *
  * @author dlmyL
  */

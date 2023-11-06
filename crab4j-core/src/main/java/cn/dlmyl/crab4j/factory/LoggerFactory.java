@@ -1,4 +1,7 @@
-package cn.dlmyl.crab4j.logger;
+package cn.dlmyl.crab4j.factory;
+
+import cn.dlmyl.crab4j.logger.Logger;
+import cn.dlmyl.crab4j.logger.SLFJLogger;
 
 /**
  * 日志工厂
@@ -7,12 +10,12 @@ package cn.dlmyl.crab4j.logger;
  */
 public class LoggerFactory {
 
-    public static Logger getLogger(Class<?> clazz) {
+    public static Logger create(Class<?> clazz) {
         org.slf4j.Logger slfjLogger = org.slf4j.LoggerFactory.getLogger(clazz);
         return new SLFJLogger(slfjLogger);
     }
 
-    public static Logger getLogger(String loggerName) {
+    public static Logger create(String loggerName) {
         org.slf4j.Logger slfjLogger = org.slf4j.LoggerFactory.getLogger(loggerName);
         return new SLFJLogger(slfjLogger);
     }

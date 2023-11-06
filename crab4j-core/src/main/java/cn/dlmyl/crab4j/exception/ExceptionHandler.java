@@ -9,6 +9,4 @@ public interface ExceptionHandler<T> {
 
     void handle(Throwable cause, T context);
 
-    String message(T context);
-
 }

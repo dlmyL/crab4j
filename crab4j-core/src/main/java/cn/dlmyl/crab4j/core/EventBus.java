@@ -3,10 +3,11 @@ package cn.dlmyl.crab4j.core;
 import cn.dlmyl.crab4j.constant.Constants;
 import cn.dlmyl.crab4j.context.EventContext;
 import cn.dlmyl.crab4j.exception.ExceptionHandler;
-import cn.dlmyl.crab4j.exception.FatalExceptionHandler;
+import cn.dlmyl.crab4j.exception.IgnoreExceptionHandler;
 import cn.dlmyl.crab4j.executor.BasicExecutor;
+import cn.dlmyl.crab4j.factory.InstanceFactory;
 import cn.dlmyl.crab4j.logger.Logger;
-import cn.dlmyl.crab4j.logger.LoggerFactory;
+import cn.dlmyl.crab4j.factory.LoggerFactory;
 
 import java.util.concurrent.Executor;
 
@@ -17,13 +18,13 @@ import java.util.concurrent.Executor;
  */
 public class EventBus implements Bus {
 
-    private static final Logger log = LoggerFactory.getLogger(EventBus.class);
+    private static final Logger log = LoggerFactory.create(EventBus.class);
 
     private final String busName;
     private final Registry registry;
     private final Dispatcher dispatcher;
 
-    private static final ExceptionHandler<EventContext> DEFAULT_EXCEPTION_HANDLER = new FatalExceptionHandler();
+    private static final ExceptionHandler<EventContext> DEFAULT_EXCEPTION_HANDLER = new IgnoreExceptionHandler();
 
     public EventBus() {
         this(Constants.DEFAULT_BUS_NAME, BasicExecutor.INSTANCE, DEFAULT_EXCEPTION_HANDLER);
@@ -42,7 +43,7 @@ public class EventBus implements Bus {
     }
 
     public EventBus(String busName, Executor executor) {
-        this(busName, executor, new FatalExceptionHandler());
+        this(busName, executor, DEFAULT_EXCEPTION_HANDLER);
     }
 
     public EventBus(Executor executor, ExceptionHandler<EventContext> exceptionHandler) {
@@ -85,13 +86,8 @@ public class EventBus implements Bus {
         return this.busName;
     }
 
-    @Override
-    public void close() {
-        this.dispatcher.close();
-    }
 
-
-    private static final class DispatcherFactory implements EventFactory<Dispatcher> {
+    private static final class DispatcherFactory implements InstanceFactory<Dispatcher> {
 
         private final Executor executor;
         private final ExceptionHandler<EventContext> exceptionHandler;
@@ -107,7 +103,7 @@ public class EventBus implements Bus {
         }
     }
 
-    private static final class RegistryFactory implements EventFactory<Registry> {
+    private static final class RegistryFactory implements InstanceFactory<Registry> {
 
         @Override
         public Registry newInstance() {

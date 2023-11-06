@@ -2,7 +2,7 @@ package cn.dlmyl.crab4j.exception;
 
 import cn.dlmyl.crab4j.context.EventContext;
 import cn.dlmyl.crab4j.logger.Logger;
-import cn.dlmyl.crab4j.logger.LoggerFactory;
+import cn.dlmyl.crab4j.factory.LoggerFactory;
 
 import java.lang.reflect.Method;
 
@@ -11,17 +11,17 @@ import java.lang.reflect.Method;
  *
  * @author dlmyL
  */
-public class FatalExceptionHandler implements ExceptionHandler<EventContext> {
+public class IgnoreExceptionHandler implements ExceptionHandler<EventContext> {
 
-    private static final Logger log = LoggerFactory.getLogger(FatalExceptionHandler.class);
+    private static final Logger log = LoggerFactory.create(IgnoreExceptionHandler.class);
 
     @Override
     public void handle(Throwable cause, EventContext context) {
-        log.warn("%s, %s", message(context), cause.toString());
+        String logContent = message(context);
+        log.warn("%s, %s", logContent, cause.toString());
     }
 
-    @Override
-    public String message(EventContext context) {
+    private String message(EventContext context) {
         Method method = context.getSubscribe();
         return "Exception thrown by subscriber method "
                 + method.getName()
