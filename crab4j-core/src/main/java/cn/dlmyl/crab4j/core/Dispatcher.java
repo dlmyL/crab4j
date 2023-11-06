@@ -6,7 +6,6 @@ import cn.dlmyl.crab4j.exception.ExceptionHandler;
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
 
 /**
  * 事件分发器
@@ -54,12 +53,6 @@ public class Dispatcher {
                 }
             }
         });
-    }
-
-    public void close() {
-        if (executor instanceof ExecutorService) {
-            ((ExecutorService) executor).shutdown();
-        }
     }
 
 
